@@ -7,7 +7,7 @@ function App() {
   return (
     <>
     <Header header="Word Counter" />
-    <div className="container">
+    <div>
       <TextForm heading="Play With Words" />
     </div>
     </>

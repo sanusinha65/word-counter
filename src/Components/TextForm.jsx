@@ -24,9 +24,51 @@ const handleOnChange =(event)=> {
   setText(event.target.value);
   
 }
+
+// let myStyle= {
+//   color: "white",
+//   backgroundColor: "black",
+//   width: "100%",
+//   height: "150%",
+//   padding: "5%",
+// }
+// State for Dark Mode Button
+const [myStyle, setMyStyle] = useState({
+  color: "black",
+  backgroundColor: "white",
+  width: "100%",
+  height: "150%",
+  padding: "5%",
+});
+const [myBtnText, setMyBtnText] = useState("Enable Dark Mode");
+
+const toggleStyle =()=>{
+  if(myStyle.color==="black"){
+    setMyStyle({
+      color: "white",
+      backgroundColor: "black",
+      width: "100%",
+      height: "150%",
+      padding: "5%",
+      })
+      setMyBtnText("Enable Light Mode");
+  }
+    else{setMyStyle({
+    color: "black",
+    backgroundColor: "white",
+    width: "100%",
+    height: "150%",
+    padding: "5%",
+    })
+    setMyBtnText("Enable Dark Mode");
+  }
+}
+
+
 // State 
   const [text, setText] = useState("Enter Text Here");
   return (
+    <div style={myStyle}>
     <div className="mb-3">
     <div className="form-group">
     <label htmlFor="myBox" className="h1">{props.heading}</label>
@@ -47,6 +89,8 @@ const handleOnChange =(event)=> {
       <h1>Here How It Will Look Like</h1>
       <p>{text}</p>
     </div>
+<button type="button" className={myBtnText==="Enable Dark Mode"? "btn btn-dark" : "btn btn-light"} onClick={toggleStyle}>{myBtnText}</button>
+  </div>
   </div>
   )
 }
