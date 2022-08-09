@@ -64,7 +64,6 @@ const toggleStyle =()=>{
   }
 }
 
-
 // State 
   const [text, setText] = useState("Enter Text Here");
   return (
@@ -72,6 +71,11 @@ const toggleStyle =()=>{
     <div className="mb-3">
     <div className="form-group">
     <label htmlFor="myBox" className="h1">{props.heading}</label>
+    <div class="form-check form-switch
+    ">
+  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={toggleStyle} />
+  <label class="form-check-label" for="flexSwitchCheckDefault">{myBtnText}</label>
+</div>
     <br />
     <br />
     <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
@@ -86,10 +90,10 @@ const toggleStyle =()=>{
       {/* <p>Reading Time: {parseInt(0.008 * text.split(" ").length) < 60 ? 
       <p>{parseInt(0.008 * text.split(" ").length)} Minutes </p> 
       : <p>{parseInt(parseInt(0.008 * text.split(" ").length)/60)} Hour</p>  } </p> */}
-      <h1>Here How It Will Look Like</h1>
+      <h1>Preview</h1>
       <p>{text}</p>
     </div>
-<button type="button" className={myBtnText==="Enable Dark Mode"? "btn btn-dark" : "btn btn-light"} onClick={toggleStyle}>{myBtnText}</button>
+    
   </div>
   </div>
   )

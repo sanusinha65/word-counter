@@ -3,7 +3,7 @@ import TextForm from './Components/TextForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Components/Header';
 
-function App() {
+function App(props) {
   return (
     <>
     <Header header="Word Counter" />
