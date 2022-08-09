@@ -9,6 +9,8 @@ export default function TextForm(props) {
     setText(upperCase);
     console.log("Before: " +text);
     console.log("After: " +upperCase);
+    props.showAlert(
+      "converted To Uppercase!","success");
 }
 // Lowercase Function
 const handleLowClick =()=> {
@@ -17,6 +19,8 @@ const handleLowClick =()=> {
   setText(lowerCase);
   console.log("Before: " +text);
     console.log("After: " +lowerCase);
+    props.showAlert(
+      "converted To lowercase!","danger");
 }
 // OnChange
 const handleOnChange =(event)=> {
@@ -52,6 +56,8 @@ const toggleStyle =()=>{
       padding: "5%",
       })
       setMyBtnText("Enable Light Mode");
+      props.showAlert(
+        "Dark Mode Enabled!","danger");
   }
     else{setMyStyle({
     color: "black",
@@ -61,6 +67,8 @@ const toggleStyle =()=>{
     padding: "5%",
     })
     setMyBtnText("Enable Dark Mode");
+    props.showAlert(
+      "Light Mode Enabled!","success");
   }
 }
 
@@ -71,10 +79,10 @@ const toggleStyle =()=>{
     <div className="mb-3">
     <div className="form-group">
     <label htmlFor="myBox" className="h1">{props.heading}</label>
-    <div class="form-check form-switch
+    <div className="form-check form-switch
     ">
-  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={toggleStyle} />
-  <label class="form-check-label" for="flexSwitchCheckDefault">{myBtnText}</label>
+  <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={toggleStyle} />
+  <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{myBtnText}</label>
 </div>
     <br />
     <br />
