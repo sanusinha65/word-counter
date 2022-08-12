@@ -6,10 +6,6 @@ import Alert from './Components/Alert';
 import { useState } from "react";
 import React from 'react';
 
-
-
-
-
 function App(props) {
   const [alert, setAlert] = useState(null);
 
@@ -33,7 +29,6 @@ function App(props) {
     <div>
       <TextForm heading="Play With Words" showAlert={showAlert} />
     </div>
-    
     </>
   );
 }

@@ -28,14 +28,6 @@ const handleOnChange =(event)=> {
   setText(event.target.value);
   
 }
-
-// let myStyle= {
-//   color: "white",
-//   backgroundColor: "black",
-//   width: "100%",
-//   height: "150%",
-//   padding: "5%",
-// }
 // State for Dark Mode Button
 const [myStyle, setMyStyle] = useState({
   color: "black",
@@ -95,9 +87,6 @@ const toggleStyle =()=>{
       <h1>Summary</h1>
       <p>{text.split(" ").length > 1 ? <p> {text.split(" ").length} Words and {text.length} Characters</p> : <p> 0 Words and {text.length} Characters</p> } </p>
       <p>Reading Time: {parseInt(0.008 * text.split(" ").length)} Minutes </p>
-      {/* <p>Reading Time: {parseInt(0.008 * text.split(" ").length) < 60 ? 
-      <p>{parseInt(0.008 * text.split(" ").length)} Minutes </p> 
-      : <p>{parseInt(parseInt(0.008 * text.split(" ").length)/60)} Hour</p>  } </p> */}
       <h1>Preview</h1>
       <p>{text}</p>
     </div>
